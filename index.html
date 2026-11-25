@@ -714,29 +714,33 @@ const fileChips = document.getElementById('file-chips');
 let extractedDocs = [];
 uploadBtn.addEventListener('click', ()=>cvFilesInput.click());
 cvFilesInput.addEventListener('change', async ()=>{
-  const files = Array.from(cvFilesInput.files||[]).slice(0, MAX_FILES);
+  const room = MAX_FILES - extractedDocs.length;
+  const files = Array.from(cvFilesInput.files||[]).slice(0, Math.max(room,0));
   cvFilesInput.value='';
   if(!files.length) return;
-  extractedDocs = []; fileChips.innerHTML='';
   for(const f of files){
     const chip = document.createElement('div'); chip.className='file-chip';
-    chip.innerHTML = '<span class="nm">📄 '+esc(f.name)+'</span><span class="st">reading… পড়া হচ্ছে…</span>';
+    chip.innerHTML = '<span class="nm">📄 '+esc(f.name)+'</span><span class="st">reading… পড়া হচ্ছে…</span><button type="button" class="rm" title="Remove" style="background:none;border:none;color:#ff7a7a;cursor:pointer;font-size:13px">✕</button>';
     fileChips.appendChild(chip);
+    const doc = {name:f.name, text:null, chip};
+    extractedDocs.push(doc);
+    chip.querySelector('.rm').addEventListener('click', ()=>{ extractedDocs = extractedDocs.filter(d=>d!==doc); chip.remove(); applyExtracted(); });
     try{
       const text = await extractText(f);
       const clean = (text||'').trim();
       if(!clean) throw new Error('empty');
-      extractedDocs.push({name:f.name, text:clean});
+      doc.text = clean;
       chip.querySelector('.st').innerHTML = '<span class="ok">✓ '+clean.length.toLocaleString()+' chars</span>';
     }catch(e){
       chip.querySelector('.st').innerHTML = '<span class="bad">✕ পড়া যায়নি / could not read</span>';
     }
+    applyExtracted();
   }
-  applyExtracted();
 });
 function applyExtracted(){
-  if(!extractedDocs.length) return;
-  let combined = extractedDocs.map((d,i)=> (extractedDocs.length>1 ? ('--- FILE '+(i+1)+': '+d.name+' ---\n') : '') + d.text).join('\n\n');
+  const ready = extractedDocs.filter(d=>d.text);
+  if(!ready.length){ return; }
+  let combined = ready.map((d,i)=> (ready.length>1 ? ('--- FILE '+(i+1)+': '+d.name+' ---\n') : '') + d.text).join('\n\n');
   if(combined.length > MAX_CHARS) combined = combined.slice(0, MAX_CHARS) + '\n[… long files trimmed]';
   document.getElementById('cv-text').value = combined;
 }
