@@ -734,6 +734,7 @@ cvFilesInput.addEventListener('change', async ()=>{
       chip.querySelector('.st').innerHTML = '<span class="ok">✓ '+clean.length.toLocaleString()+' chars</span>';
     }catch(e){
       chip.querySelector('.st').innerHTML = '<span class="bad">✕ পড়া যায়নি / could not read</span>';
+      extractedDocs = extractedDocs.filter(d=>d!==doc); // failed file does not count toward the limit
     }
     applyExtracted();
   }
