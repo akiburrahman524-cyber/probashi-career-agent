@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Probashi Career Agent — free AI help for jobs abroad</title>
+<title>Global Career — free AI help for jobs abroad</title>
 <meta name="description" content="Free AI agent for Bangladeshis seeking jobs abroad: chat in Bangla or English, ATS CV check, cover letters, and visa-sponsor job routes for UK, Canada, Australia, Germany, Italy, Ireland, New Zealand and more.">
 <meta name="author" content="Akibur Rahman">
 <meta name="theme-color" content="#0f5c3c">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Probashi">
+<meta name="apple-mobile-web-app-title" content="Global Career">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
@@ -161,8 +161,8 @@ footer a{color:#8fc7ff;text-decoration:none}
 
 <header>
   <div class="brand">
-    <div class="brand-mark" aria-label="Probashi logo"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f5c3c"/><stop offset="1" stop-color="#1fbf7a"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#lg-bg)"/><path d="M 102 358 A 220 220 0 0 1 410 205" stroke="#f5c14e" stroke-width="15" fill="none" stroke-linecap="round"/><circle cx="102" cy="358" r="28" fill="#f5c14e"/><path d="M 299 164 L 449 123 L 350 244 L 333 196 Z" fill="#eef2ff"/><path d="M 333 196 L 449 123 L 363 213 Z" fill="#c7d2f0"/></svg></div>
-    <h1>Probashi Career Agent<small>free AI agent for jobs abroad</small></h1>
+    <div class="brand-mark" aria-label="Global Career logo"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f5c3c"/><stop offset="1" stop-color="#1fbf7a"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#lg-bg)"/><path d="M 102 358 A 220 220 0 0 1 410 205" stroke="#f5c14e" stroke-width="15" fill="none" stroke-linecap="round"/><circle cx="102" cy="358" r="28" fill="#f5c14e"/><path d="M 299 164 L 449 123 L 350 244 L 333 196 Z" fill="#eef2ff"/><path d="M 333 196 L 449 123 L 363 213 Z" fill="#c7d2f0"/></svg></div>
+    <h1>Global Career<small>free AI agent for jobs abroad</small></h1>
   </div>
   <span class="pill">100% free — always free for job seekers</span>
 </header>
@@ -312,14 +312,14 @@ footer a{color:#8fc7ff;text-decoration:none}
 
 <div class="pro-strip">
   <h3>Free for job seekers. Always.</h3>
-  <p>Today everything is free. Later, employers may pay us when they hire through Probashi, and members who get a job can leave a voluntary thank-you if they want — never a condition, never a fee to get a job. In the UK and under ILO rules, charging job seekers for finding them work is illegal, and we built the model around that from day one.</p>
+  <p>Today everything is free. Later, employers may pay us when they hire through Global Career, and members who get a job can leave a voluntary thank-you if they want — never a condition, never a fee to get a job. In the UK and under ILO rules, charging job seekers for finding them work is illegal, and we built the model around that from day one.</p>
 </div>
 
 <footer>
-  <p>Probashi Career Agent · free forever for job seekers · made for the Bangladeshi community worldwide 🇧🇩</p>
+  <p>Global Career · free forever for job seekers · made for the Bangladeshi community worldwide 🇧🇩</p>
   <p>AI can make mistakes — always confirm visa rules on the official government sites linked above. This is a software tool, not a recruitment agency, and it never takes money from job seekers.</p>
   <p><a href="#" id="terms-link" rel="nofollow">Terms of Use</a> · <a href="#" id="privacy-link" rel="nofollow">Privacy</a></p>
-  <p style="margin-top:10px;color:#7c8ab0">© 2026 <strong style="color:#aebadd">Akibur Rahman</strong>. All rights reserved.<br>Designed, built and owned by Akibur Rahman (<span style="font-family:'Noto Serif Bengali',serif">আকিবুর রহমান</span>). The Probashi name, logo and this software may not be copied, resold or claimed by anyone else.</p>
+  <p style="margin-top:10px;color:#7c8ab0">© 2026 <strong style="color:#aebadd">Akibur Rahman</strong>. All rights reserved.<br>Designed, built and owned by Akibur Rahman (<span style="font-family:'Noto Serif Bengali',serif">আকিবুর রহমান</span>). The Global Career name, logo and this software may not be copied, resold or claimed by anyone else.</p>
 </footer>
 
 <div id="legal-modal" style="display:none;position:fixed;inset:0;z-index:50;background:rgba(4,8,18,.8);backdrop-filter:blur(6px);padding:20px;overflow-y:auto">
@@ -369,7 +369,7 @@ function clearError(id){ document.getElementById(id).style.display='none'; }
 
 /* ================= agent chat ================= */
 const AGENT_SYSTEM = {role:'system', content:
-`You are "Probashi Agent", a free AI career agent for Bangladeshi people seeking jobs abroad (UK, Canada, Australia, Europe, Gulf, anywhere). You behave like a world-class personal assistant for job seeking.
+`You are "Global Career Agent", a free AI career agent for Bangladeshi people seeking jobs abroad (UK, Canada, Australia, Europe, Gulf, anywhere). You behave like a world-class personal assistant for job seeking.
 
 LANGUAGE: Always reply in the same language the user writes in — Bangla, English, Banglish or any other. If they mix, mirror the mix. Use natural, warm, respectful Bangla when writing Bangla.
 
@@ -433,7 +433,7 @@ async function sendChat(q){
 chatSend.addEventListener('click', ()=>sendChat(chatText.value));
 chatText.addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendChat(chatText.value); }});
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>sendChat(c.dataset.q)));
-addMsg('bot','আসসালামু আলাইকুম! 👋 I am your Probashi Agent. আমাকে বাংলা বা English-এ বলুন — voice 🎙 বা text — যেভাবে সহজ।\n\nI can check your CV with an ATS score, write cover letters and HR emails, and show you which countries and employers can sponsor your work visa. শুরু করতে নিচের যেকোনো button চাপুন বা আপনার CV paste করুন।');
+addMsg('bot','আসসালামু আলাইকুম! 👋 I am your Global Career Agent. আমাকে বাংলা বা English-এ বলুন — voice 🎙 বা text — যেভাবে সহজ।\n\nI can check your CV with an ATS score, write cover letters and HR emails, and show you which countries and employers can sponsor your work visa. শুরু করতে নিচের যেকোনো button চাপুন বা আপনার CV paste করুন।');
 
 /* voice input */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -679,11 +679,11 @@ spBtn.addEventListener('click', async ()=>{
 /* ================= legal modal ================= */
 const LEGAL = {
   terms: {title:'Terms of Use', body:`
-    <p><strong>1. What this is.</strong> Probashi Career Agent is a free software tool owned and operated by Akibur Rahman. It gives AI-generated CV feedback, document drafts and links to official government job/visa sources. It is <strong>not</strong> a recruitment agency, employer, or law firm, and it does not guarantee any job or visa.</p>
+    <p><strong>1. What this is.</strong> Global Career is a free software tool owned and operated by Akibur Rahman. It gives AI-generated CV feedback, document drafts and links to official government job/visa sources. It is <strong>not</strong> a recruitment agency, employer, or law firm, and it does not guarantee any job or visa.</p>
     <p><strong>2. Free for job seekers, forever.</strong> We never charge job seekers any fee — not for CV checks, not for finding work, not for anything. In many countries (including the UK under the Employment Agencies Act 1973) charging job seekers placement fees is illegal. If anyone asks you to pay for a job in our name, it is a scam — do not pay.</p>
     <p><strong>3. Accuracy.</strong> AI output can be wrong or outdated. Always verify visa rules, sponsor lists and job offers on the official government websites we link. Never share passwords, OTPs, bank details or original documents with anyone claiming to represent this tool.</p>
     <p><strong>4. Your content.</strong> Text you paste (like your CV) is sent to a third-party AI model only to produce your answer, and is not stored on any server of ours. Do not paste other people's private data.</p>
-    <p><strong>5. Ownership.</strong> The Probashi Career Agent name, logo, design and software are the property of Akibur Rahman, © 2026, all rights reserved. You may use the tool freely, but you may not copy, resell, rebrand or claim it as your own.</p>
+    <p><strong>5. Ownership.</strong> The Global Career name, logo, design and software are the property of Akibur Rahman, © 2026, all rights reserved. You may use the tool freely, but you may not copy, resell, rebrand or claim it as your own.</p>
     <p><strong>6. Fair use.</strong> Do not misuse the tool for fraud, fake documents, or to mislead employers. Documents must use your real experience only.</p>`},
   privacy: {title:'Privacy', body:`
     <p><strong>No accounts, no storage.</strong> You never sign up. Your text goes from your browser to the AI model that generates the answer, and nothing is saved on our side. Closing the tab clears your conversation.</p>

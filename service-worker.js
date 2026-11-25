@@ -1,5 +1,5 @@
-/* Probashi Career Agent — offline shell cache. AI calls always go to network. */
-const CACHE = 'probashi-v2';
+/* Global Career — offline shell cache. AI calls always go to network. */
+const CACHE = 'globalcareer-v3';
 const SHELL = [
   './',
   './index.html',

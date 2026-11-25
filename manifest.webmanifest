@@ -1,6 +1,6 @@
 {
-  "name": "Probashi Career Agent",
-  "short_name": "Probashi",
+  "name": "Global Career",
+  "short_name": "Global Career",
   "description": "Free AI agent for jobs abroad: chat in Bangla or English, ATS CV check, cover letters, visa-sponsor job finder.",
   "start_url": "./index.html",
   "scope": "./",
