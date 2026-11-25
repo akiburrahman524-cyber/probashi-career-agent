@@ -719,10 +719,11 @@ cvFilesInput.addEventListener('change', async ()=>{
   cvFilesInput.value='';
   if(!files.length) return;
   for(const f of files){
+    if(extractedDocs.some(d=>d.name===f.name && d.size===f.size)) continue; // ignore duplicate selects
     const chip = document.createElement('div'); chip.className='file-chip';
     chip.innerHTML = '<span class="nm">📄 '+esc(f.name)+'</span><span class="st">reading… পড়া হচ্ছে…</span><button type="button" class="rm" title="Remove" style="background:none;border:none;color:#ff7a7a;cursor:pointer;font-size:13px">✕</button>';
     fileChips.appendChild(chip);
-    const doc = {name:f.name, text:null, chip};
+    const doc = {name:f.name, size:f.size, text:null, chip};
     extractedDocs.push(doc);
     chip.querySelector('.rm').addEventListener('click', ()=>{ extractedDocs = extractedDocs.filter(d=>d!==doc); chip.remove(); applyExtracted(); });
     try{
